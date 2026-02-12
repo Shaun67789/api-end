@@ -379,7 +379,7 @@ def home():
     return jsonify({
         'success': True,
         'message': 'Gemini AI API is running!',
-        'api_dev': '@PNL_CODEX',
+        'api_dev': '@ShawonXnone',
         'endpoints': {
             '/api/ask': {
                 'method': 'GET',
@@ -404,7 +404,7 @@ def ask_gemini():
         return jsonify({
             'success': False,
             'error': 'Missing required parameter: prompt',
-            'api_dev': '@PNL_CODEX',
+            'api_dev': '@ShawonXnone',
             'usage': {
                 'endpoint': '/api/ask',
                 'method': 'GET',
@@ -419,12 +419,12 @@ def ask_gemini():
         return jsonify({
             'success': False,
             'error': 'Prompt cannot be empty',
-            'api_dev': '@PNL_CODEX'
+            'api_dev': '@ShawonXnone'
         }), 400
     
     result = chat_with_gemini(prompt)
     
-    result['api_dev'] = '@PNL_CODEX'
+    result['api_dev'] = '@ShawonXnone'
     result['prompt'] = prompt
     
     if result['success']:
@@ -437,7 +437,7 @@ def not_found(error):
     return jsonify({
         'success': False,
         'error': 'Endpoint not found',
-        'api_dev': '@PNL_CODEX',
+        'api_dev': '@ShawonXnone',
         'available_endpoints': ['/', '/api/ask']
     }), 404
 
@@ -446,7 +446,7 @@ def internal_error(error):
     return jsonify({
         'success': False,
         'error': 'Internal server error',
-        'api_dev': '@PNL_CODEX'
+        'api_dev': '@ShawonXnone'
     }), 500
 
 if __name__ == '__main__':
